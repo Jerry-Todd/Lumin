@@ -1,4 +1,4 @@
-local Lumin = require("build.Lumin")
+local Lumin = require("Lumin")
 local terminalWidth, terminalHeight = term.getSize()
 
 -- Create the main view for the application

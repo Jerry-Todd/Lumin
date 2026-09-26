@@ -5,15 +5,30 @@ Lumin is a small Lua GUI framework for CC:Tweaked. It provides composable views 
 ## Requirements
 
 - CC:Tweaked / ComputerCraft
-- The bundled application at `build/app.lua`, importable as `require("build.app")`
+- `Lumin.lua` installed in the computer's current directory or Lua path
 
 Lumin uses CC:Tweaked APIs such as `term`, `window`, `colors`, `keys`, and `parallel`.
-Regenerate the bundle from the project root with `npx @justjurt/bcc@latest` after changing the source modules.
+
+## Installation
+
+Run this command in the CC:Tweaked shell to download the bundled framework:
+
+```sh
+wget https://raw.githubusercontent.com/Jerry-Todd/Lumin/main/Lumin.lua Lumin.lua
+```
+
+Then load it in a Lua program:
+
+```lua
+local Lumin = require("Lumin")
+```
+
+If you change Lumin's source modules, regenerate the bundle from the repository root with `npx @justjurt/bcc@latest`.
 
 ## Quick Start
 
 ```lua
-local Lumin = require("build.app")
+local Lumin = require("Lumin")
 local terminalWidth, terminalHeight = term.getSize()
 
 -- Create the main view for the application
