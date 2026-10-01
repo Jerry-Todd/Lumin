@@ -8,7 +8,7 @@ f.Start(j)g=false parallel.waitForAll(j,function()parallel.waitForAny(function(
 )while not g do sleep(0)end term.setBackgroundColor(colors.black)term.setTextColor(
 colors.white)term.clear()term.setCursorPos(1,1)end,function()local k=os.startTimer(
 0.5)while true do local l,m,x,y=os.pullEvent()if l=="mouse_click"and h then
-h.handleClick(m,x,y)elseif l=="mouse_scroll"and h and h.handleScroll then h
+h.handleClick(1,x,y)elseif l=="mouse_scroll"and h and h.handleScroll then h
 .handleScroll(m,x,y)elseif(l=="char"or l=="key"or l=="paste")and h and h.handleTextEvent
 then h.handleTextEvent(l,m)elseif l=="timer"and m==k then if h and h.handleTextEvent
 then h.handleTextEvent("blink")end k=os.startTimer(0.5)end end end)end)end function

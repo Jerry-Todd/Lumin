@@ -33,7 +33,7 @@ function Lumin.Start(mainFunction)
                     while true do
                         local event, mouseButton, x, y = os.pullEvent()
                         if event == "mouse_click" and MainView then
-                            MainView.handleClick(mouseButton, x, y)
+                            MainView.handleClick(1, x, y)
                         elseif event == "mouse_scroll" and MainView and MainView.handleScroll then
                             MainView.handleScroll(mouseButton, x, y)
                         elseif (event == "char" or event == "key" or event == "paste")

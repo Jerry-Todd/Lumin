@@ -28,6 +28,8 @@ If you change Lumin's source modules, regenerate the bundle from the repository 
 ## Quick Start
 
 ```lua
+-- Optional: redirect output before creating any Lumin views.
+-- term.redirect(peripheral.wrap("monitor_0"))
 local Lumin = require("Lumin")
 local terminalWidth, terminalHeight = term.getSize()
 
@@ -102,6 +104,8 @@ All constructors accept an options table. Common options include `x`, `y`, `widt
 - `Lumin.CreateBasicView(options)` creates the base view object used by other views.
 
 ## Runtime
+
+Lumin renders to the terminal currently selected by `term.redirect`; it does not choose or change the output device. Redirect to a monitor before creating views, then use the framework as usual. For example, call `term.redirect(peripheral.wrap("monitor_0"))` before constructing the root view. This also ensures `term.getSize()` returns the redirected device's dimensions when the layout is created.
 
 Call `Lumin.setMainView(view)` to register the root view, draw it, then call `Lumin.Start(function() ... end)` to start the event loop. The loop forwards mouse, keyboard, paste, and timer events to the registered root. Call `Lumin.Stop()` to stop the loop.
 
